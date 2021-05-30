@@ -1,12 +1,17 @@
 package com.games.chess.game;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.games.chess.peices.*;
 import lombok.Data;
 
 @Data
+@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public class Board {
-    int[][] board ;
+    Piece[][] board ;
 
     public Board(){
-       this.board = new int[8][8];
+       this.board = new Piece[8][8];
     }
+
+
 }

@@ -5,10 +5,8 @@ import com.games.chess.service.GameService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 import javax.validation.Valid;
 
 @RestController
@@ -29,7 +27,7 @@ public class ChessController {
     }
 
     @PostMapping(path = "/move", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<GameDTO> nextMove(@Valid GameDTO gameDTO){
+    public ResponseEntity<GameDTO> nextMove(@RequestBody GameDTO gameDTO){
         GameDTO nextMoveGameDTO = gameService.nextMove(gameDTO);
         return ResponseEntity.ok(nextMoveGameDTO);
     }

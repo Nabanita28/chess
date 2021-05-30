@@ -1,16 +1,22 @@
 package com.games.chess.peices;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.games.chess.game.Colour;
 import com.games.chess.game.Location;
 import com.games.chess.game.Player;
 import com.games.chess.game.PieceType;
 
+import java.awt.*;
+@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public class Bishop extends Piece{
 
     PieceType pieceType;
+    Colour colour;
 
-    public Bishop(Player player, Location location){
+    public Bishop(Player player, Location location, Colour colour){
         super(player, location);
         this.pieceType = PieceType.BISHOP;
+        this.colour = colour;
     }
 
 
