@@ -13,12 +13,12 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping("chess/api/v1")
-public class GameController {
+public class ChessController {
 
     private final GameService gameService;
 
     @Autowired
-    public GameController(GameService gameService){
+    public ChessController(GameService gameService){
         this.gameService = gameService;
     }
 
